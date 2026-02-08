@@ -1,0 +1,509 @@
+<!-- index.html is mine and index2.html is of chatgpt and
+  in both in laptop both are working fine but in mobile both 
+  are not giving the ideal result but index.html(is giving close to ldeal result)
+  compared to index2.html 
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix India - watch TV Shows</title>
+    <link rel="icon" type="image/svg+xml" href="4375011_logo_netflix_icon.svg">
+</head>
+
+<style>
+    .list {
+        list-style: none;
+        display: flex;
+        margin: 0%;
+        padding: 0%;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .list img {
+        width: 10vw;
+        height: 10vh;
+    }
+
+    .select {
+        margin-right: 20px;
+        background-color: transparent;
+        font-size: medium;
+        color: aliceblue;
+        padding: 10px;
+    }
+
+    .button1 {
+        margin-right: 50px;
+        background-color: red;
+        border: 2px solid black;
+        border-radius: 10px;
+        width: 150px;
+        font-size: medium;
+        color: aliceblue;
+        padding: 0%;
+    }
+
+    .button1:hover {
+        cursor: pointer;
+        background-color: rgb(180, 6, 6);
+    }
+
+    .center_content {
+        margin-top: 200px;
+        justify-self: center;
+    }
+
+    .line1 {
+        font-size: 100px;
+        justify-self: center;
+        color: aliceblue;
+    }
+
+    .line2 {
+        font-size: 80px;
+        justify-self: center;
+        color: aliceblue;
+    }
+
+    .line3 {
+        font-size: 30px;
+        justify-self: center;
+        margin-bottom: 30px;
+        color: aliceblue;
+    }
+
+    .button2 {
+        justify-self: center;
+        border: 2px solid black;
+        border-radius: 10px;
+        background-color: red;
+        color: aliceblue;
+    }
+
+    .button2:hover {
+        cursor: pointer;
+        background-color: rgb(180, 6, 6);
+    }
+
+    .button2_para {
+        font-size: 50px;
+        padding: 10px;
+    }
+
+    /* Apply background to entire page */
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://assets.nflxext.com/ffe/siteui/vlv3/c95abc7a-8124-4630-bb7a-3b160bdc6de3/web/IN-en-20250915-TRIFECTA-perspective_d3d87aa7-58ed-4c6b-98dc-231ed05ba675_large.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .Trending {
+        color: aliceblue;
+        font-size: 70px;
+        padding-left: 150px;
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    .list2 {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+    }
+
+    .list2::-webkit-scrollbar {
+        height: 20px;
+    }
+
+    .list2::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 10px;
+        padding-top: 30px;
+        scroll-behavior: smooth;
+        border: 5px solid black;
+    }
+
+    .img {
+        border-radius: 25px;
+    }
+
+    .movies {
+        position: relative;
+    }
+
+    .movies:hover {
+        cursor: pointer;
+    }
+
+    .numbers {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: black;
+        font-size: 120px;
+        font-weight: bolder;
+        -webkit-text-stroke: 2px whitesmoke;
+    }
+
+    .reasons {
+        font-size: 70px;
+        padding-left: 150px;
+        color: aliceblue;
+    }
+
+    .megadiv {
+        color: aliceblue;
+        display: flex;
+    }
+
+    .div1_1,
+    .div1_2,
+    .div1_3,
+    .div1_4 {
+        border: 2px solid black;
+        margin: 10px;
+        background: linear-gradient(to bottom, rgb(38, 38, 64), rgb(31, 19, 36));
+        border-radius: 20px;
+    }
+
+    .div1_1_1,
+    .div1_2_1,
+    .div1_3_1,
+    .div1_4_1 {
+        font-size: 30px;
+        padding: 20px;
+        justify-self: center;
+    }
+
+    .div1_1_2,
+    .div1_2_2,
+    .div1_3_2,
+    .div1_4_2 {
+        padding: 20px;
+    }
+
+    .Questions {
+        font-size: 50px;
+        padding-left: 150px;
+        color: aliceblue;
+        padding-bottom: 100px;
+        padding-top: 100px;
+        margin-top: 100px;
+    }
+
+    .list3 {
+        list-style: none;
+        font-size: 50px;
+        padding: 0;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* ✅ Fixed FAQ section */
+    .Questions_section {
+        background-color: black;
+        width: 100%; /* was 120vw */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .question {
+        font-size: 20px;
+        color: aliceblue;
+        background-color: rgb(88, 88, 88);
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 800px; /* looks good on laptop */
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .question:hover {
+        cursor: pointer;
+        background-color: rgb(121, 121, 121);
+    }
+
+    .notplus {
+        padding: 5px;
+    }
+
+    .plus {
+        padding-right: 20px;
+        justify-self: center;
+    }
+
+    .button3 {
+        font-size: 25px;
+        background-color: red;
+        border-radius: 15px;
+        margin: 30px auto;
+        color: aliceblue;
+        padding: 15px;
+        width: 100%;
+        max-width: 500px;
+        display: block;
+    }
+
+    .button3:hover {
+        background-color: rgb(180, 6, 6);
+        cursor: pointer;
+    }
+
+    .lastpart {
+        color: gray;
+        padding-left: 150px;
+        padding-top: 70px;
+    }
+
+    .lastpart a {
+        color: grey;
+    }
+
+    .lastpart2 {
+        padding-left: 150px;
+        padding-bottom: 30px;
+    }
+
+    .lastpart2 a {
+        color: grey;
+    }
+
+    .flex {
+        display: flex;
+        padding: 50px;
+        padding-left: 0%;
+    }
+
+    .lastpart3 {
+        padding-bottom: 30px;
+    }
+
+    .select1 {
+        background-color: black;
+        color: aliceblue;
+        padding-left: 150px;
+        padding-bottom: 30px;
+    }
+
+    .select2 {
+        padding: 15px;
+        color: aliceblue;
+        background-color: transparent;
+    }
+
+    .theend {
+        color: gray;
+        padding-left: 150px;
+        padding-bottom: 100px;
+        padding-top: 30px;
+    }
+
+    .option {
+        color: black;
+    }
+
+    /* ✅ Mobile styles */
+    @media only screen and (max-width: 768px) {
+        .line1 {
+            font-size: 50px;
+        }
+
+        .line2 {
+            font-size: 40px;
+        }
+
+        .line3 {
+            font-size: 20px;
+        }
+
+        .button2_para {
+            font-size: 30px;
+        }
+
+        .Trending,
+        .reasons,
+        .Questions {
+            font-size: 30px;
+            padding: 20px;
+        }
+
+        .megadiv {
+            flex-direction: column;
+        }
+
+        .question {
+            font-size: 18px;
+            width: 100%;
+            margin: 8px 0;
+        }
+
+        .button3 {
+            font-size: 20px;
+            width: 100%;
+            padding: 12px;
+        }
+
+        .lastpart2,
+        .lastpart3 {
+            padding: 20px;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .Questions_section {
+            max-width: 100%;
+        }
+    }
+</style>
+
+<body class="body">
+
+    <!-- Navbar -->
+    <div>
+        <ul class="list">
+            <li>
+                <img src="31JfJ6dXD9L.png">
+            </li>
+            <li>
+                <select class="select">
+                    <option class="option"> English </option>
+                    <option class="option"> hindi </option>
+                </select>
+                <button class="button1">
+                    <p>sign out</p>
+                </button>
+            </li>
+        </ul>
+
+        <!-- Hero -->
+        <div class="center_content">
+            <div class="line1">Unlimited movies, TV</div>
+            <div class="line2">shows and more</div>
+            <div class="line3">Starts at ₹149. Cancel at any time.</div>
+            <div class="button2">
+                <button class="button2">
+                    <div class="button2_para">Finish sign up</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="Trending">Trending Now</div>
+
+    <!-- Trending list -->
+    <ul class="list2">
+        <!-- Your movie list here -->
+    </ul>
+
+    <p class="reasons">More reasons to join</p>
+
+    <!-- Reasons -->
+    <div class="megadiv">
+        <div class="div1_1">
+            <div class="div1_1_1">enjoy on your tv</div>
+            <div class="div1_1_2">
+                Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.
+            </div>
+        </div>
+        <div class="div1_2">
+            <div class="div1_2_1">Download your shows to watch offline</div>
+            <div class="div1_2_2">
+                Save your favourites easily and always have something to watch
+            </div>
+        </div>
+        <div class="div1_3">
+            <div class="div1_3_1">Watch everywhere</div>
+            <div class="div1_3_2">
+                Stream unlimited movies and TV shows on your phone, tablet, laptop and TV.
+            </div>
+        </div>
+        <div class="div1_4">
+            <div class="div1_4_1">Create profiles for kids</div>
+            <div class="div1_4_2">
+                Send kids on adventures with their favourite characters in a space made just for them — free with your
+                membership.
+            </div>
+        </div>
+    </div>
+
+    <!-- ✅ Fixed FAQ Section -->
+    <div class="Questions_section">
+        <div class="Questions">Frequently Asked Questions</div>
+        <div>
+            <ul class="list3">
+                <li class="question"><div class="notplus">what is Netflix?</div><div class="plus">+</div></li>
+                <li class="question"><div class="notplus">How much does Netflix cost</div><div class="plus">+</div></li>
+                <li class="question"><div class="notplus">where can i watch</div><div class="plus">+</div></li>
+                <li class="question"><div class="notplus">how do i Cancel?</div><div class="plus">+</div></li>
+                <li class="question"><div class="notplus">What can I watch on Netflix ??</div><div class="plus">+</div></li>
+                <li class="question"><div class="notplus">is Netflix good for kids</div><div class="plus">+</div></li>
+            </ul>
+            <button class="button3">finish sign-up</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="lastpart">
+            Questions ?? Call
+            <a href="tel:000-800-919-1743">000-800-919-1743</a>
+        </div>
+
+        <div class="flex">
+            <div class="lastpart2">
+                <div class="lastpart3"><a href="https://help.netflix.com/support/412">FAQ</a></div>
+                <div class="lastpart3"><a href="https://media.netflix.com/">MEDIA CENTER </a></div>
+                <div class="lastpart3"><a href="/watch">WAYS TO WATCH</a></div>
+                <div class="lastpart3"><a href="#">Cookie preferences</a></div>
+                <div class="lastpart3"><a href="htpps://fast.com">Speed test</a></div>
+            </div>
+            <div class="lastpart2">
+                <div class="lastpart3"><a href="https://help.netflix.com">help center</a></div>
+                <div class="lastpart3"><a href="http://ir.netflix.com/">investor relations</a></div>
+                <div class="lastpart3"><a href="https://help.netflix.com/legal/termsofuse">terms of use</a></div>
+                <div class="lastpart3"><a href="https://help.netflix.com/legal/corpinfo">co-operate information</a></div>
+                <div class="lastpart3"><a href="https://help.netflix.com/legal/notices">legal-notices</a></div>
+            </div>
+            <div class="lastpart2">
+                <div class="lastpart3"><a href="/youraccount">ACCOUNT</a></div>
+                <div class="lastpart3"><a href="https://jobs.netflix.com/jobs">JOBS</a></div>
+                <div class="lastpart3"><a href="https://help.netflix.com/legal/privacy">PRIVACY</a></div>
+                <div class="lastpart3"><a href="https://help.netflix.com/contactus">CONTACT US </a></div>
+                <div class="lastpart3"><a href="https://www.netflix.com/in/browse/genre/839338">ONLY ON NETFLIX</a></div>
+            </div>
+        </div>
+
+        <div class="select1">
+            <select class="select2">
+                <option class="option"> English </option>
+                <option class="option"> hindi </option>
+            </select>
+        </div>
+
+        <div class="theend">Netflix Clone</div>
+    </div>
+</body>
+
+</html>
