@@ -1,0 +1,184 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.left{
+width: 25vw;
+position: relative;
+}
+
+.right{
+    width: 75vw;
+    position: relative;
+}
+
+.home ul li{
+    list-style: none;
+
+    width: 2vw;
+
+    gap: 2vw;
+}
+
+.footer a{
+    color: grey;
+        max-width: 25vw;
+    font-size: 1vw;
+}
+
+.library{
+    position: relative;
+    height: 100%;
+    }
+.footer{
+  
+     flex-wrap: wrap;
+}
+
+.left_arrow{
+    width: 2vw;
+
+}
+
+.right_arrow{
+    width: 2vw;
+}
+
+.header{
+    justify-content: space-between;
+
+}
+
+.spotify-playlists-header{
+    justify-content: space-between;
+}
+
+.spotify-playlists{
+    background-image: linear-gradient(rgb(29, 29, 29) , black);
+    height: 100%;
+overflow-y:auto;
+
+}
+
+.spotify-playlists-list{
+    gap: 1vw;
+}
+
+.img{
+    width: 8vw;
+}
+
+.card_container:hover{
+background-color: rgb(50, 50, 50);
+
+}
+
+.lastpart{
+    gap:2vw;
+    
+}
+
+.footer{
+position: absolute;
+bottom: 0;
+}
+
+.controls{
+background-color: aquamarine;
+
+position: fixed;
+bottom: 0%;
+width: 70vw;
+
+
+}
+
+.songUL{
+    list-style-type:none;
+    color: aliceblue;
+}
+
+.songUL  li a{
+text-decoration: none;
+    color: aliceblue;
+}
+
+.songUL  li a:hover{
+text-decoration: underline;
+    color:blue;
+}
+
+.SONGCARD{
+    gap: 1vw;
+    border: 2px solid aliceblue;
+  padding: 10px;
+}
+
+.playsong{
+    gap: 1vw;
+}
+
+.songUL li{
+    border: 2px solid aliceblue;
+    gap: 0.5vw;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;   
+cursor: pointer;
+margin: 20px;
+width: 100%
+}
+
+.SONGSLIST{
+    height: 500px;
+    overflow-y: auto;
+margin-bottom: 100px;
+margin-top: 50px;
+
+}
+ 
+.play_button{
+    width: 2vw;
+}
+
+.seekbar{
+    
+    height:3px;
+    border-radius: 3vw;
+    border: 2px solid red;
+ width: 95%;
+   position:absolute;
+   bottom: 10%;
+}
+
+.song_buttons{
+    gap: 1.5vw;
+   margin-bottom: 5px;
+
+}
+
+.circle{
+    width: 15px;
+    height: 15px;
+    border-radius: 3vw;
+    border: 2px solid red;
+    position: absolute;
+   bottom: -224%;
+    left: 0%;
+    background-color: red;
+transition: left 2s;
+}
+
+.song_buttons img{
+    cursor: pointer;
+}
+
+.songinfo{
+    color: blue;
+}
+
+.songtime{
+    color : blue
+}
